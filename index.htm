@@ -7,6 +7,13 @@
 function toTwoDigits(iIn) {
 	return ((iIn < 10) ? "0" : "") + iIn;
 }
+function showSundownTime() {
+	var uiNow = document.querySelector("#uiSundownTime");
+	var ai = getSundownTimeToday();
+	var sOut = ai[0] + ":" + toTwoDigits(ai[1]);
+	sOut += " and also wurkin gurkin";
+	uiNow.innerHTML = sOut;
+}
 function showCurrentTime() {
 	var dtNow = new Date();
 	var uiNow = document.querySelector("#uiCurrentTime");
@@ -16,9 +23,20 @@ function showCurrentTime() {
 	sOut += ":" + toTwoDigits(dtNow.getSeconds());
 	uiNow.innerHTML = sOut;
 }
+function startTicker() {
+	showCurrentTime();
+	showSundownTime();
+	setInterval(function() {
+		showCurrentTime();
+	},1000);
+}
+function getSundownTimeToday() {
+	return [17,7];
+}
 </script>
 </head>
-<body onload="showCurrentTime();">
+<body onload="startTicker();">
 <div id="uiCurrentTime"></div>
+<div id="uiSundownTime"></div>
 </body>
 </html>
