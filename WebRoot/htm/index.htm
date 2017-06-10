@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Crepuscular</title>
+<script type="text/javascript">
+function toTwoDigits(iIn) {
+	return ((iIn < 10) ? "0" : "") + iIn;
+}
+function showCurrentTime() {
+	var dtNow = new Date();
+	var uiNow = document.querySelector("#uiCurrentTime");
+	var sOut = "";
+	sOut += dtNow.getHours();
+	sOut += ":" + toTwoDigits(dtNow.getMinutes());
+	sOut += ":" + toTwoDigits(dtNow.getSeconds());
+	uiNow.innerHTML = sOut;
+}
+</script>
+</head>
+<body onload="showCurrentTime();">
+<div id="uiCurrentTime"></div>
+</body>
+</html>
