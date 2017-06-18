@@ -9,11 +9,45 @@ function toTwoDigits(iIn) {
 }
 function showSundownTime() {
 	var uiNow = document.querySelector("#uiSundownTime");
-	var ai = getSundownTimeToday();
+	var ai = getSundownTimeTodayAsArray();
 	var sOut = ai[0] + ":" + toTwoDigits(ai[1]);
 	sOut += " and also wurkin gurkin";
 	uiNow.innerHTML = sOut;
 }
+function showTimeRemaining() {
+	//get the time now
+	var dtNow = new Date(); 
+	//get sundown time
+	var dtSundown = getSundownTimeTodayAsDate();
+	//minus time now from sundown time
+	var nBetween = dtSundown - dtNow;
+	nBetween = nBetween / (1000 * 60);
+	var sSign = ((nBetween < 0) ? " ago" : "");
+	nBetween = Math.abs(nBetween);
+	var iMinutes = (nBetween % 60);
+	var sMinutes = toTwoDigits(iMinutes);
+	var iHours = (nBetween - iMinutes) / 60
+	var sOut = iHours + ":" + sMinutes + sSign;
+	//show remaining time onscreen
+	var uiNow = document.querySelector("#uiTimeRemaining");
+	uiNow.innerHTML = sOut;
+}
+
+function getSundownTimeTodayAsDate() {
+	var aiSundown = getSundownTimeTodayAsArray();
+	var dtSundown = new Date();
+	dtSundown.setHours(aiSundown[0]);
+	dtSundown.setMinutes(aiSundown[1]);
+	/*
+	console.log(dtSundown.getHours());
+	debugger;
+	console.log(dtSundown.getHours());
+	console.log(dtSundown.getHours());
+	console.log(dtSundown);
+	*/
+	return dtSundown;
+}
+
 function showCurrentTime() {
 	var dtNow = new Date();
 	var uiNow = document.querySelector("#uiCurrentTime");
@@ -26,17 +60,21 @@ function showCurrentTime() {
 function startTicker() {
 	showCurrentTime();
 	showSundownTime();
+	showTimeRemaining();
 	setInterval(function() {
 		showCurrentTime();
+		showTimeRemaining();
 	},1000);
 }
-function getSundownTimeToday() {
-	return [17,7];
+function getSundownTimeTodayAsArray() {
+	return [17,4];
 }
 </script>
 </head>
 <body onload="startTicker();">
 <div id="uiCurrentTime"></div>
 <div id="uiSundownTime"></div>
+<div id="uiTimeRemaining"></div>
 </body>
 </html>
+
