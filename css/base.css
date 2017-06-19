@@ -1,0 +1,55 @@
+* {
+	font-family:Helvetica, sans-serif;
+}
+#framePage, #frameLeft, #frameRight {
+	border: 2px dotted silver;
+}
+#framePage {
+}
+#frameLeft {
+	float: left;
+    width: 60px;
+    min-height: 500px;
+}
+#frameRight {
+    padding-left: 65px;
+}
+#frameRight div.timeLabel {
+	margin-top: 40px;
+}
+#frameRight div.timeBig {
+    font-size: 42pt;
+}
+
+/* # GRAPH ########################################################### */
+#frameGraph {
+	height: 530px;
+	position:relative;
+}
+#graphMainLine {
+	height: 500px;
+	width: 3px;
+	background-color: #9AC0FB;
+	margin-left: 14px;
+}
+.graphMilestone {
+	border: 2px solid #9AC0FB;
+	position:absolute;
+	top: 20px;
+	font-size: 12px;
+	width: 16px;
+	height: 16px;
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	margin-left: 5px;
+}
+#graphSun {
+	width: 20px;
+	height: 20px;
+	background-color: #fff899;
+	border-radius: 50%;
+	position:absolute;
+	top: 20px;
+	margin-left: 5px;
+}
+/* # GRAPH ########################################################### */
