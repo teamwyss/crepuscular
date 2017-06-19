@@ -25,10 +25,11 @@ body {
     padding-left: 65px;
 }
 #frameRight div.timeLabel {
-	margin-top: 40px;
+	padding-top: 40px;
 }
 #frameRight div.timeBig {
     font-size: 42pt;
+	line-height: 38pt;
 }
 
 /* # GRAPH ########################################################### */
@@ -52,6 +53,7 @@ body {
 	background-color: #FFFFFF;
 	border-radius: 50%;
 	margin-left: 5px;
+	color: #8bb2d6;
 }
 #graphSun {
 	border: 2px solid #FF8800;

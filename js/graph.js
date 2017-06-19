@@ -8,7 +8,7 @@ var graph = {
 		var uiGraph = document.querySelector("#frameGraph");
 		var sOut = "<div id=\"graphMainLine\"></div>";
 		sOut += "<div id=\"graphSchool\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(5) + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VCA</div>";
-		sOut += "<div id=\"graphFlinders\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(25) + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flind</div>";
+		sOut += "<div id=\"graphFlinders\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(15) + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flind</div>";
 		sOut += "<div id=\"graphMidBrighton\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(45) + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MBri</div>";
 		sOut += "<div id=\"graphHome\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(55) + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</div>";
 		//sOut += "";
