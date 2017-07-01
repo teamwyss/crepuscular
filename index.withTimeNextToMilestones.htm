@@ -3,18 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Crepuscular</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/font-open-sans-64.css"/>
+<link rel="stylesheet" type="text/css" href="css/base.css"/>
+<script type="text/javascript" src="js/graph.js"></script>
 <script type="text/javascript">
 function toTwoDigits(iIn) {
-	return ((iIn < 10) ? "0" : "") + iIn;
+	return ((iIn < 10) ? "0" : "") + Math.round(iIn);
 }
 function showSundownTime() {
 	var uiNow = document.querySelector("#uiSundownTime");
 	var ai = getSundownTimeTodayAsArray();
 	var sOut = ai[0] + ":" + toTwoDigits(ai[1]);
-	sOut += " and also wurkin gurkin";
+	//sOut += " and also wurkin gurkin";
 	uiNow.innerHTML = sOut;
 }
-function showTimeRemaining() {
+function showTimeRemaining(sUiElementTrg, iTravelMins) {
+	if (typeof iTravelMins == "undefined") {
+		iTravelMins = 0;
+	}
 	//get the time now
 	var dtNow = new Date(); 
 	//get sundown time
@@ -22,14 +29,16 @@ function showTimeRemaining() {
 	//minus time now from sundown time
 	var nBetween = dtSundown - dtNow;
 	nBetween = nBetween / (1000 * 60);
+	nBetween -= iTravelMins;
+	nBetween = Math.max(0, nBetween);
 	var sSign = ((nBetween < 0) ? " ago" : "");
 	nBetween = Math.abs(nBetween);
 	var iMinutes = (nBetween % 60);
 	var sMinutes = toTwoDigits(iMinutes);
 	var iHours = (nBetween - iMinutes) / 60
-	var sOut = iHours + ":" + sMinutes + sSign;
+	var sOut = (iHours < 10 ? "0" : "") + iHours + ":" + sMinutes + sSign;
 	//show remaining time onscreen
-	var uiNow = document.querySelector("#uiTimeRemaining");
+	var uiNow = document.querySelector(sUiElementTrg);
 	uiNow.innerHTML = sOut;
 }
 
@@ -38,13 +47,6 @@ function getSundownTimeTodayAsDate() {
 	var dtSundown = new Date();
 	dtSundown.setHours(aiSundown[0]);
 	dtSundown.setMinutes(aiSundown[1]);
-	/*
-	console.log(dtSundown.getHours());
-	debugger;
-	console.log(dtSundown.getHours());
-	console.log(dtSundown.getHours());
-	console.log(dtSundown);
-	*/
 	return dtSundown;
 }
 
@@ -54,27 +56,42 @@ function showCurrentTime() {
 	var sOut = "";
 	sOut += dtNow.getHours();
 	sOut += ":" + toTwoDigits(dtNow.getMinutes());
-	sOut += ":" + toTwoDigits(dtNow.getSeconds());
+	sOut += "<grey>:" + toTwoDigits(dtNow.getSeconds()) + "</grey>";
 	uiNow.innerHTML = sOut;
 }
 function startTicker() {
 	showCurrentTime();
 	showSundownTime();
-	showTimeRemaining();
+	showTimeRemaining("#uiTimeRemaining");
+	showTimeRemaining("#uiStartTravel", 60);
+	graph.init().refresh();
 	setInterval(function() {
 		showCurrentTime();
-		showTimeRemaining();
+		showTimeRemaining("#uiTimeRemaining");
+		graph.refresh();
 	},1000);
 }
 function getSundownTimeTodayAsArray() {
-	return [17,4];
+	return [21,4];
 }
 </script>
 </head>
 <body onload="startTicker();">
-<div id="uiCurrentTime"></div>
-<div id="uiSundownTime"></div>
-<div id="uiTimeRemaining"></div>
+<div id="framePage">
+	<div id="frameLeft">
+		<div id="frameGraph">Graph</div>
+	</div>
+	<div id="frameRight">
+		<div class="timeLabel">Current Time</div>
+		<div id="uiCurrentTime" class="timeBig"></div>
+		<div class="timeLabel">Exit VCASS</div>
+		<div id="uiStartTravel" class="timeBig"></div>
+		<div class="timeLabel">Sundown</div>
+		<div id="uiSundownTime" class="timeBig"></div>
+		<div class="timeLabel">Time Remaining</div>
+		<div id="uiTimeRemaining" class="timeBig"></div>
+	</div>
+</div>
 </body>
 </html>
 

@@ -28,7 +28,7 @@ grey {
     padding-left: 100px;
 }
 #frameRight div.timeLabel {
-	padding: 40px 0 0 4px;
+	padding-top: 40px;
 }
 #frameRight div.timeBig {
     font-size: 42pt;
@@ -68,11 +68,6 @@ grey {
 	top: 20px;
 	margin-left: 36px;
 }
-.graphMilestone span {
-	display:inline-block;
-	width: 30px;
-}
-/*
 .graphMilestone .label {
 	color: #5E8BB5;
 	position: absolute;
@@ -84,5 +79,4 @@ grey {
 	right: 0px;
 	padding-right: 21px;
 }
-*/
 /* # GRAPH ########################################################### */
