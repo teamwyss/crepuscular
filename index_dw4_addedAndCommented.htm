@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <title>Crepuscular</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- link rel="stylesheet" type="text/css" href="css/font-open-sans-64.css"/-->
 <link rel="stylesheet" type="text/css" href="css/base.css"/>
-<link rel="stylesheet" type="text/css" href="css/font-open-sans-64.css"/>
+<!--script type="text/javascript" src="js/graph.js"></script-->
 <script type="text/javascript">
 function toTwoDigits(iIn) {
 	return ((iIn < 10) ? "0" : "") + Math.round(iIn);
@@ -74,7 +75,11 @@ function getSundownTimeTodayAsArray() {
 </script>
 </head>
 <body onload="startTicker();">
-	<div id="frameStats">
+<!--div id="framePage"-->
+	<!--div id="frameLeft">
+		<div id="frameGraph">Graph</div>
+	</div-->
+	<div id="frameRight">
 		<div class="timeLabel">Current Time</div>
 		<div id="uiCurrentTime" class="timeBig"></div>
 		<div class="timeLabel">Sundown</div>
@@ -84,6 +89,7 @@ function getSundownTimeTodayAsArray() {
 		<div class="timeLabel">Time Remaining</div>
 		<div id="uiTimeRemaining" class="timeBig"></div>
 	</div>
+<!--/div-->
 </body>
 </html>
 
