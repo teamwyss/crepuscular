@@ -7,10 +7,12 @@ var graph = {
 		var dtNow = new Date();
 		var uiGraph = document.querySelector("#frameGraph");
 		var sOut = "<div id=\"graphMainLine\"></div>";
-		sOut += "<div id=\"graphSchool\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(5) + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VCA</div>";
-		sOut += "<div id=\"graphFlinders\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(15) + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flind</div>";
-		sOut += "<div id=\"graphMidBrighton\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(45) + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MBri</div>";
-		sOut += "<div id=\"graphHome\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(55) + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</div>";
+		var sSpace = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		//sOut += "<div id=\"graphSchool\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(5) + ";\"><div class=\"time\">0:00</div><div class=\"label\">VCASS</div></div>";
+		sOut += "<div id=\"graphSchool\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(5) + ";\">" + sSpace + "VCASS</div>";
+		sOut += "<div id=\"graphFlinders\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(15) + ";\">" + sSpace + "Flind</div>";
+		sOut += "<div id=\"graphMidBrighton\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(45) + ";\">" + sSpace + "MBri</div>";
+		sOut += "<div id=\"graphHome\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(55) + ";\">" + sSpace + "Home</div>";
 		//sOut += "";
 		sOut += "<div id=\"graphSun\">&nbsp;</div>";
 		//sOut += dtNow.getHours();
