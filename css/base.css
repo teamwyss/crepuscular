@@ -15,6 +15,9 @@ body {
 	border: 2px dotted silver;
 }
 */
+grey {
+	color:rgba(0,0,0,0.2);
+}
 /*
 #framePage {
 }
@@ -80,4 +83,17 @@ body {
 	top: 20px;
 	margin-left: 5px;
 }
+/*
+.graphMilestone .label {
+	color: #5E8BB5;
+	position: absolute;
+    padding-left: 20px;
+}
+.graphMilestone .time {
+	color: #5E8BB5;
+	position: absolute;
+	right: 0px;
+	padding-right: 21px;
+}
+*/
 /* # GRAPH ########################################################### */
