@@ -14,13 +14,7 @@ body {
 	border: 2px dotted silver;
 }
 */
-<<<<<<< HEAD
 /*
-=======
-grey {
-	color:rgba(0,0,0,0.2);
-}
->>>>>>> d0d218df42401ec66a1454bc1466d5958759a6f7
 #framePage {
 }
 #frameLeft {
@@ -29,10 +23,10 @@ grey {
     min-height: 500px;
 }
 #frameRight {
-    padding-left: 100px;
+    padding-left: 65px;
 }
 #frameRight div.timeLabel {
-	padding: 40px 0 0 4px;
+	padding-top: 40px;
 }
 #frameRight div.timeBig {
     font-size: 42pt;
@@ -57,7 +51,7 @@ grey {
 	height: 500px;
 	width: 3px;
 	background-color: #9AC0FB;
-	margin-left: 45px;
+	margin-left: 14px;
 }
 .graphMilestone {
 	border: 2px solid #9AC0FB;
@@ -68,7 +62,7 @@ grey {
 	height: 16px;
 	background-color: #FFFFFF;
 	border-radius: 50%;
-	margin-left: 36px;
+	margin-left: 5px;
 	color: #5E8BB5;
 }
 #graphSun {
@@ -79,23 +73,6 @@ grey {
 	border-radius: 50%;
 	position:absolute;
 	top: 20px;
-	margin-left: 36px;
+	margin-left: 5px;
 }
-.graphMilestone span {
-	display:inline-block;
-	width: 30px;
-}
-/*
-.graphMilestone .label {
-	color: #5E8BB5;
-	position: absolute;
-    padding-left: 20px;
-}
-.graphMilestone .time {
-	color: #5E8BB5;
-	position: absolute;
-	right: 0px;
-	padding-right: 21px;
-}
-*/
 /* # GRAPH ########################################################### */
