@@ -1,0 +1,139 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Light;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 HelveticaNeue;\f4\fnil\fcharset77 ZapfDingbatsITC;}
+{\colortbl;\red255\green255\blue255;\red131\green127\blue117;\red89\green173\blue200;\red21\green23\blue26;
+\red255\green255\blue255;\red27\green31\blue34;\red83\green149\blue74;\red101\green71\blue146;\red19\green36\blue126;
+\red245\green245\blue245;\red70\green77\blue86;}
+{\*\expandedcolortbl;;\cssrgb\c58431\c56863\c53333;\cssrgb\c41176\c73333\c82353;\cssrgb\c10588\c12157\c13725\c29804;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c14118\c16078\c18039;\cssrgb\c38824\c63922\c36078;\cssrgb\c47451\c36471\c63922;\cssrgb\c9412\c21176\c56863;
+\cssrgb\c96863\c96863\c96863;\cssrgb\c34510\c37647\c41176;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl528\sa90\partightenfactor0
+
+\f0\fs36 \cf2 \expnd0\expndtw0\kerning0
+The easy method\
+\pard\pardeftab720\sl567\sa315\partightenfactor0
+
+\fs31\fsmilli15750 \cf2 The easiest way to add a single icon that suits both types of iPhone screens (standard resolution and Retina Display) and iPad screens is to create a single 
+\f1 PNG
+\f0  image with the dimensions 
+\f1 150 x 150 pixels
+\f0 . The filename for the PNG image must be:\uc0\u8232 
+\f1 apple-touch-icon.png
+\f0 \
+\pard\pardeftab720\sl567\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl567\sa315\partightenfactor0
+\cf2 You must then upload your new file to the 
+\f1 root directory
+\f0  of your website, which is where Safari will look for it when adding the icon to the home screen. e.g. {\field{\*\fldinst{HYPERLINK "http://www.cellcode.com/apple-touch-icon.png"}}{\fldrslt \cf3 http://www.cellcode.co.uk/apple-touch-icon.png}}.\
+After you have uploaded the new icon image, you can then use the instructions earlier in the post to ensure it works properly when adding the icon to your home screen. Notice that by default iOS automatically resizes the icon, applies shimmer and gloss effects to it and then rounds the edges to match the standard icon shape, size and style.\
+\pard\pardeftab720\sl567\partightenfactor0
+\cf2 \
+\
+\pard\pardeftab720\sl567\sa315\partightenfactor0
+\cf2 You\'92ll also find that some third party apps make good use of the icon if it\'92s available. For example, this is a screenshot from Reeder for iPad showing the icon for the Cellcode RSS feed:\
+\pard\pardeftab720\sl567\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl528\sa90\partightenfactor0
+
+\fs36 \cf2 Using the style that suits your icon\
+\pard\pardeftab720\sl567\sa315\partightenfactor0
+
+\fs31\fsmilli15750 \cf2 You may have noticed that the icon I have used doesn\'92t look so great with the standard shimmer and gloss effects applied on the home screen \'96 it interferes with the design of the logo. Luckily, Apple understands that there\'92s a need for icons without the effects applied and they offer us the ability to show the icon as-is by using the following filename for the PNG image in your website\'92s root directory instead:\uc0\u8232 
+\f1 apple-touch-icon-precomposed.png
+\f0 \
+\pard\pardeftab720\sl528\sa90\partightenfactor0
+
+\fs36 \cf2 Getting the icon exactly as you want it and sizing it correctly for different iOS screen resolutions\
+\pard\pardeftab720\sl567\sa315\partightenfactor0
+
+\fs31\fsmilli15750 \cf2 If you prefer to have the icon fully rendered exactly as you want it to look for each of the three supported iOS screen resolutions, you\'92ll need to use Adobe Photoshop or an equivalent package to create the icons for the right sizes. You can download a {\field{\*\fldinst{HYPERLINK "http://external.cellcode.co.uk/iphone-ipad-icon-psd-template"}}{\fldrslt \cf3 good Photoshop template}} to help you make your icons match the required shapes and sizes. When you are happy with the way each icon looks, you\'92ll need to export the icons with the following filenames and place them in the root directory of your website:\
+iPhone standard icon (57 x 57 pixels) 
+\f1 apple-touch-icon-57\'d757-precomposed.png
+\f0 \uc0\u8232 iPhone Retina Display icon (114 x 114 pixels) 
+\f1 apple-touch-icon-114\'d7114-precomposed.png
+\f0 \uc0\u8232 iPad icon (72 x 72 pixels) 
+\f1 apple-touch-icon-72\'d772-precomposed.png
+\f0 \
+You can keep the default icon apple-touch-icon.png that you created earlier in the root directory of your website alongside these new resolution-specific icons. Usually, third party apps will use the default icon and Safari will automatically look for the icon filename that should suit the device best. Safari will only use the default icon or an incorrectly sized icon if it can\'92t find a file that best matches the screen resolution.\
+Now the icons look exactly as I want them to:\
+\pard\pardeftab720\sl567\partightenfactor0
+\cf2 \
+\
+\
+\
+\
+\
+\pard\pardeftab720\sl528\sa90\partightenfactor0
+
+\fs36 \cf2 Having different icons for different pages\
+\pard\pardeftab720\sl567\sa315\partightenfactor0
+
+\fs31\fsmilli15750 \cf2 So far we have covered specifying icons for a whole website by placing the icon PNG files in the root directory of your website, but Apple also offers the ability to specify icons for individual pages with meta tags. Using this method, you are welcome to name the icon PNG files exactly as you wish because Safari will be looking for the value in the meta tag rather than the image in the root directory. For a single icon that suits all sizes, you should place the following meta tag after the <head> tag and before the </head> tag, where \'93my_icons/icon_filename.png\'94 is the path location of the icon PNG file that you have created:\uc0\u8232 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat5 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth160\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt80 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth9970\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt80 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+
+\f2\fs24 \cf4 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf6 \cb5 <\cf7 link\cf6  \cf8 rel\cf6 =\cf9 "apple-touch-icon"\cf6  \cf8 href\cf6 =\cf9 "my_icons/my_icon_file_path.png"\cf6  />\cb1 \cell \lastrow\row
+\pard\pardeftab720\sl300\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://gist.github.com/RoyGoode/3303931/raw/384cf230a9d6adb4e18ada55bea630090951c422/gistfile1.html"}}{\fldrslt 
+\f3\b \cf3 \cb10 view raw}}
+\f3\b \cf3 \
+\pard\pardeftab720\sl300\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://gist.github.com/RoyGoode/3303931#file-gistfile1-html"}}{\fldrslt \cf3 \cb10 gistfile1.html}}
+\b0 \cf11 \cb10  hosted with 
+\f4 \uc0\u10084 
+\f3  by {\field{\*\fldinst{HYPERLINK "https://github.com/"}}{\fldrslt 
+\b \cf3 GitHub}}\
+\pard\pardeftab720\sl567\sa315\partightenfactor0
+
+\f0\fs31\fsmilli15750 \cf2 \cb1 \
+If you have created resolution-specific icons, you should place the following meta tags after the <head> tag and before the </head> tag, replacing the href values with the actual location paths of the icons on your website:\uc0\u8232 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat5 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth160\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt80 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth14015\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt80 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+
+\f2\fs24 \cf4 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf6 \cb5 <\cf7 link\cf6  \cf8 rel\cf6 =\cf9 "apple-touch-icon"\cf6  \cf8 href\cf6 =\cf9 "apple-touch-icon-iphone.png"\cf6  />\cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat5 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth160\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth14015\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf4 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf6 \cb5 <\cf7 link\cf6  \cf8 rel\cf6 =\cf9 "apple-touch-icon"\cf6  \cf8 sizes\cf6 =\cf9 "72x72"\cf6  \cf8 href\cf6 =\cf9 "apple-touch-icon-ipad.png"\cf6  />\cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat5 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth160\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth14015\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl200 \clpadb20 \clpadr200 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400\qr\partightenfactor0
+\cf4 \cell 
+\pard\intbl\itap1\pardeftab720\sl400\partightenfactor0
+\cf6 \cb5 <\cf7 link\cf6  \cf8 rel\cf6 =\cf9 "apple-touch-icon"\cf6  \cf8 sizes\cf6 =\cf9 "114x114"\cf6  \cf8 href\cf6 =\cf9 "apple-touch-icon-iphone-retina-display.png"\cf6  />\cb1 \cell \lastrow\row
+\pard\pardeftab720\sl300\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://gist.github.com/RoyGoode/3304079/raw/c9b39daac77d0374b9e23b9ffc5735c8c4ff614a/gistfile1.html"}}{\fldrslt 
+\f3\b \cf3 \cb10 view raw}}
+\f3\b \cf3 \
+\pard\pardeftab720\sl300\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://gist.github.com/RoyGoode/3304079#file-gistfile1-html"}}{\fldrslt \cf3 \cb10 gistfile1.html}}
+\b0 \cf11 \cb10  hosted with 
+\f4 \uc0\u10084 
+\f3  by {\field{\*\fldinst{HYPERLINK "https://github.com/"}}{\fldrslt 
+\b \cf3 GitHub}}\
+\pard\pardeftab720\sl567\sa315\partightenfactor0
+
+\f0\fs31\fsmilli15750 \cf2 \cb1 \
+Now you can control the icon used for the home screen depending on whichever page the user wanted to bookmark. It is recommended that you keep the default icon 
+\f1 apple-touch-icon.png
+\f0  in the root directory of your website to ensure there is always an icon available if the meta tags are not present on individual pages.\
+}
