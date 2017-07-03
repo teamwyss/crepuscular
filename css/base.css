@@ -16,7 +16,8 @@ body {
 }
 */
 grey {
-	color:rgba(0,0,0,0.2);
+	XXXcolor:rgba(0,0,0,0.2);
+	opacity: 0.5;
 }
 /*
 #framePage {
