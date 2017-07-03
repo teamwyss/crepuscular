@@ -1,9 +1,11 @@
 var graph = {
 	metrics: {
+		// Store data used in multiple places in the app.
 		h:500
 		,minsTotal:60
 	}
 	,init : function(){
+		// Render all the elements. Some are updated by the refresh method.
 		var dtNow = new Date();
 		var uiGraph = document.querySelector("#frameGraph");
 		var sOut = "<div id=\"graphMainLine\"></div>";
@@ -20,16 +22,19 @@ var graph = {
 		return this;
 	}
 	, refresh : function(){
+		// Run the updates to the UI.
 		var uiSun = document.querySelector("#graphSun");
 		uiSun.style.top = this.remainingToPx();
 		return this;
 	}
 	, remainingToPx: function(){
+		// Convert remaining time to a distance from the top.
 		var iSec = (new Date()).getSeconds();
 		//var iTopPx = Math.round((iSec / 60) * this.metrics.h);
 		return this.minsToPx(iSec)
 	}
 	, minsToPx: function(iMins){
+		// Convert minutes to pixels.
 		var iTopPx = Math.round((iMins / this.metrics.minsTotal) * this.metrics.h);
 		return iTopPx + "px";
 	}
