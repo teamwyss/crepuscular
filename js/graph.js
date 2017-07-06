@@ -11,10 +11,10 @@ var graph = {
 		var sOut = "<div id=\"graphMainLine\"></div>";
 		var sSpace = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 		//sOut += "<div id=\"graphSchool\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(5) + ";\"><div class=\"time\">0:00</div><div class=\"label\">VCASS</div></div>";
-		sOut += "<div id=\"graphSchool\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(5) + ";\">" + sSpace + "VCASS</div>";
-		sOut += "<div id=\"graphFlinders\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(15) + ";\">" + sSpace + "Flind</div>";
-		sOut += "<div id=\"graphMidBrighton\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(45) + ";\">" + sSpace + "MBri</div>";
-		sOut += "<div id=\"graphHome\" class=\"graphMilestone\" style=\"top:" + this.minsToPx(55) + ";\">" + sSpace + "Home</div>";
+		sOut += "<div id=\"graphSchool\" class=\"graphMilestone\" style=\"top:" + this.minsToDestToPx(55) + ";\">" + sSpace + "VCASS</div>";
+		sOut += "<div id=\"graphFlinders\" class=\"graphMilestone\" style=\"top:" + this.minsToDestToPx(45) + ";\">" + sSpace + "Flind</div>";
+		sOut += "<div id=\"graphMidBrighton\" class=\"graphMilestone\" style=\"top:" + this.minsToDestToPx(15) + ";\">" + sSpace + "MBri</div>";
+		sOut += "<div id=\"graphHome\" class=\"graphMilestone\" style=\"top:" + this.minsToDestToPx(5) + ";\">" + sSpace + "Home</div>";
 		//sOut += "";
 		sOut += "<div id=\"graphSun\">&nbsp;</div>";
 		//sOut += dtNow.getHours();
@@ -29,9 +29,13 @@ var graph = {
 	}
 	, remainingToPx: function(){
 		// Convert remaining time to a distance from the top.
-		var iSec = (new Date()).getSeconds();
+		//var iSec = (new Date()).getSeconds();
+		var iMins = (new Date()).getMinutes();
 		//var iTopPx = Math.round((iSec / 60) * this.metrics.h);
-		return this.minsToPx(iSec)
+		return this.minsToPx(iMins);
+	}
+	, minsToDestToPx: function(iMinsToDest){
+		return this.minsToPx(this.metrics.minsTotal - iMinsToDest);
 	}
 	, minsToPx: function(iMins){
 		// Convert minutes to pixels.

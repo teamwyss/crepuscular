@@ -1,0 +1,103 @@
+* {
+	font-family:open_sanslight, Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+	/*
+	color: rgb(190, 255, 255);
+	*/
+	color: #9AC0FB;
+}
+body {
+	background-color: #141414;
+	/*
+	background-color: #9AC0FB;
+	*/
+}
+/*
+#framePage, #frameLeft, #frameStats {
+	border: 2px dotted silver;
+}
+*/
+grey {
+}
+/*
+*/
+#framePage {
+}
+#frameLeft {
+    width: 100px;
+    min-height: 500px;
+    position: absolute;
+    padding: 30px 0 0 30px;
+}
+#frameStats {
+    padding-left: 65px;
+}
+#frameStats div.timeLabel {
+	padding-top: 25px;
+}
+#frameStats div.timeBig {
+    font-size: 42pt;
+}
+#frameStats {
+	float: left;
+	XXXborder: 1px solid orange;
+	padding-left: 100px;
+	padding-top: 50px;
+}
+.timeBig {
+	XXXcolor: red;
+    font-size: 42pt;
+	line-height: 38pt;
+	padding-bottom: 30px;
+}
+.timeLabel {
+	padding-left: 5px;
+}
+/* # GRAPH ########################################################### */
+#frameGraph {
+	height: 500px;
+	position:relative;
+}
+#graphMainLine {
+	height: 500px;
+	width: 3px;
+	background-color: rgba(154, 192, 251, 0.52);;
+	margin-left: 14px;
+}
+.graphMilestone {
+	border: 2px solid #9AC0FB;
+	position:absolute;
+	top: 20px;
+	font-size: 12px;
+	width: 16px;
+	height: 16px;
+	background-color: #141414;
+	border-radius: 50%;
+	margin-left: 5px;
+	color: #5E8BB5;
+}
+#graphSun {
+	border: 2px solid #FFFFFF;
+	width: 16px;
+	height: 16px;
+	background-color: #9AC0FB;
+	border-radius: 50%;
+	position:absolute;
+	top: 20px;
+	margin-left: 5px;
+}
+/*
+.graphMilestone .label {
+	color: #5E8BB5;
+	position: absolute;
+    padding-left: 20px;
+}
+.graphMilestone .time {
+	color: #5E8BB5;
+	position: absolute;
+	right: 0px;
+	padding-right: 21px;
+}
+*/
+/* # GRAPH ########################################################### */
