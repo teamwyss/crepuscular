@@ -76,11 +76,15 @@ function startTicker() {
 	},1000);
 }
 function getSundownTimeTodayAsArray() {
+	//console.log(" it is now month " + (new Date()).getMonth());
 	return [17,4];
 }
 </script>
 </head>
 <body onload="startTicker();">
+	<div id="settings">
+		<img src="img/icnSettings.png"/>
+	</div>
 	<div id="frameStats">
 		<div class="timeLabel">Current Time is...</div>
 		<div id="uiCurrentTime" class="timeBig"></div>
