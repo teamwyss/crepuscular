@@ -1,5 +1,5 @@
 
-var creuscularCalendar = [
+var crepuscularCalendar = [
 	 [20,45] // 00 Jan
 	,[20,33] // 01 Feb
 	,[20,00] // 02 Mar

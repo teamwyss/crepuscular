@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Crepuscular</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="js/data.sundownTimes.js"></script>
 <link rel="stylesheet" type="text/css" href="css/base.css"/>
 <link rel="stylesheet" type="text/css" href="css/font-open-sans-64.css"/>
 <script type="text/javascript">
@@ -19,6 +20,9 @@ function showSundownTime() {
 	uiNow.innerHTML = sOut;
 }
 function showTimeRemaining(sUiElementTrg, iTravelMins) {
+	if (typeof iTravelMins == "undefined") {
+		iTravelMins = g_iTravelTime;
+	}
 	//get the time now
 	var dtNow = new Date(); 
 	//get sundown time
@@ -64,30 +68,58 @@ function showCurrentTime() {
 	uiNow.innerHTML = sOut;
 }
 function startTicker() {
+	var g_iTravelTime = getTravelTimeCookie();
 	showCurrentTime();
 	showSundownTime();
 	showTimeRemaining("#uiTimeRemaining", 0);
-	showTimeRemaining("#uiStartTravel", g_iTravelTime);
+	showTimeRemaining("#uiStartTravel");
 	//graph.init().refresh();
 	setInterval(function() {
 		showCurrentTime();
 		showTimeRemaining("#uiTimeRemaining", 0);
-		showTimeRemaining("#uiStartTravel", g_iTravelTime);
+		showTimeRemaining("#uiStartTravel");
 		//graph.refresh();
 	},1000);
 }
 function getSundownTimeTodayAsArray() {
 	//console.log(" it is now month " + (new Date()).getMonth());
-	return [19,4];
+	var iMonth = (new Date()).getMonth();
+	//iMonth = 1;
+	//d ebugger;
+	var aiSundown = crepuscularCalendar[iMonth];
+	// aiSundown = [17,4];
+	return aiSundown;
+}
+var g_sTravelTimeCookieKey = "crepuscularTravelTime=";
+function setTravelTimeCookie(iTravelTimeMins) {
+	document.cookie = g_sTravelTimeCookieKey + iTravelTimeMins + ";";
+}
+function getTravelTimeCookie() {
+	var sOut = document.cookie;
+	//
+	var iX = sOut.indexOf(g_sTravelTimeCookieKey);
+	if (iX == -1) {
+		return g_iTravelTime;
+	}
+	sOut = sOut.substring(iX + g_sTravelTimeCookieKey.length);
+	var iOut = parseInt(sOut);
+	g_iTravelTime = iOut;
+	/* debugger */
+	return iOut;
 }
 function showSettings() {
 	var sAnswer = prompt("How many minutes does it take you to get home?", g_iTravelTime);
-	debugger;
+	/* debugger; */
 	if (sAnswer == null) {
 		return;
 	}
 	var iAnswer = parseInt(sAnswer);
-	g_iTravelTime = iAnswer;
+	if (isNaN(iAnswer)) {
+		alert("PLease enter a number e.g. 20.");
+	} else {
+		g_iTravelTime = iAnswer;
+		setTravelTimeCookie(iAnswer);
+	}
 }
 </script>
 </head>
