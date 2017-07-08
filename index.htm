@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="css/base.css"/>
 <link rel="stylesheet" type="text/css" href="css/font-open-sans-64.css"/>
 <script type="text/javascript">
+var g_iTravelTime = 80;
 function toTwoDigits(iIn) {
 	return ((iIn < 10) ? "0" : "") + Math.round(iIn);
 }
@@ -66,23 +67,32 @@ function startTicker() {
 	showCurrentTime();
 	showSundownTime();
 	showTimeRemaining("#uiTimeRemaining", 0);
-	showTimeRemaining("#uiStartTravel", 80);
+	showTimeRemaining("#uiStartTravel", g_iTravelTime);
 	//graph.init().refresh();
 	setInterval(function() {
 		showCurrentTime();
 		showTimeRemaining("#uiTimeRemaining", 0);
-		showTimeRemaining("#uiStartTravel", 80);
+		showTimeRemaining("#uiStartTravel", g_iTravelTime);
 		//graph.refresh();
 	},1000);
 }
 function getSundownTimeTodayAsArray() {
 	//console.log(" it is now month " + (new Date()).getMonth());
-	return [17,4];
+	return [19,4];
+}
+function showSettings() {
+	var sAnswer = prompt("How many minutes does it take you to get home?", g_iTravelTime);
+	debugger;
+	if (sAnswer == null) {
+		return;
+	}
+	var iAnswer = parseInt(sAnswer);
+	g_iTravelTime = iAnswer;
 }
 </script>
 </head>
 <body onload="startTicker();">
-	<div id="settings">
+	<div id="settings" onclick="showSettings()">
 		<img src="img/icnSettings.png"/>
 	</div>
 	<div id="frameStats">
